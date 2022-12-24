@@ -6,6 +6,7 @@
   <title>OKR of KogaMochiduki</title>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -52,17 +53,17 @@
             <p>各装置をどのような形で接続するかの接続形態をトポロジと言います。主なトポロジは以下のようなものがあります。</p>
             <ul>
               <li>ポイントツーポイント(1:1の接続)</li>
-              <img alt="point_to_point" width="500px" height="120px" src="/network/point_to_point.png">
+              <img alt="point_to_point" width="500px" height="120px" src="point_to_point.png">
               <li>スター型(中心の制御装置から放射状に接続、この制御装置の障害はネットワーク全体の障害)</li>
-              <img alt="star" width="500px" height="250px" src="/network/star.png">
+              <img alt="star" width="500px" height="250px" src="star.png">
               <li>リング型(各装置をリング状に接続、一つの機器の障害はネットワーク全体の障害となる)</li>
-              <img alt="ring" width="500px" height="250px" src="/network/ring.png">
+              <img alt="ring" width="500px" height="250px" src="ring.png">
               <li>バス型(一本の伝送路にぶら下がるように接続、機器の障害が他に与える影響が少ない)</li>
-              <img alt="basu" width="500px" height="160px" src="/network/basu.png">
+              <img alt="basu" width="500px" height="160px" src="basu.png">
               <li>ツリー型(バス型、スター型の発展、伝送路が枝分かれする)</li>
-              <img alt="tree" width="500px" height="305px" src="/network/tree.png">
+              <img alt="tree" width="500px" height="305px" src="tree.png">
               <li>メッシュ型(複数の機器同士を網状に相互接続する、広域ネットワークに多く見られる)</li>
-              <img alt="mesh" width="500px" height="200px" src="/network/mesh.png">
+              <img alt="mesh" width="500px" height="200px" src="mesh.png">
             </ul>
           </div>
         </li>
@@ -86,7 +87,7 @@
               <li>LAN(Local Area Network、コンピュータ同士を接続したネットワーク)</li>
               <li>WAN(Wide Area Network、LAN同士を接続したネットワーク)</li>
             </ul>
-            <img alt="LAN_WAN" width="500px" height="300px" src="/network/LAN_WAN.png">
+            <img alt="LAN_WAN" width="500px" height="300px" src="LAN_WAN.png">
           </div>
         </li>
         <li class="media">
@@ -112,11 +113,11 @@
               一文字の前後に<span style="color:red">スタートビット</span>と<span style="color:red">ストップビット</span>を付与して送信を行い、
               スタートビットを検出した受信者は、それに続く一文字分のビット列を受信し、最後にストップビットを確認します。
               </li>
-              <img alt="tyouho seigyo" width="500px" height="200px" src="/network/tyouho_seigyo.png">
+              <img alt="tyouho seigyo" width="500px" height="200px" src="tyouho_seigyo.png">
               <li>フレーム同期 : フラグシーケンスと呼ばれるパターン(0111110)で囲まれたフレームという単位でデータを伝送する方式です。
                 <p>フレーム(伝送データ) = フラグシーケンス(01111110) + (任意のビット列) + フラグシーケンス(01111110)</p>
               </li>
-              <img alt="tyouho seigyo" width="500px" height="165px" src="/network/flame_seigyo.png">
+              <img alt="tyouho seigyo" width="500px" height="165px" src="flame_seigyo.png">
             </ul>
           </div>
         </li>
@@ -129,11 +130,11 @@
             <ul>
               <li>パリティ検査 : 送信側と受信側でデータ内の1の数を数え、それが奇数(または偶数)で一致しているかどうかで誤りを検出する方法です。
               1ビット(奇数)の誤りは検出できますが、2ビット(偶数)の誤りは検出できません。</li>
-              <img alt="tyouho seigyo" width="500px" height="260px" src="/network/parity.png">
+              <img alt="tyouho seigyo" width="500px" height="260px" src="parity.png">
               <li>垂直パリティ検査 : 複数文字のまとまりをブロックという単位として捉え、ブロック中の文字単位でパリティビットを付加する方法です。</li>
               <li>水平パリティ検査 : 複数文字のまとまりをブロックという単位として捉え、ブロック中の文字の同じ位置のビットに対してパリティビットを付加する方法です。
               誤り検出用の文字が付加されることになり、これを<span style="font-weight:bold">BCC</span>(Block Check Character)と言います。</li>
-              <img alt="tyouho seigyo" width="500px" height="240px" src="/network/suihei_parity.png">
+              <img alt="tyouho seigyo" width="500px" height="240px" src="suihei_parity.png">
               <li>CRC(Cuclic Redundancy Check:巡回冗長検査) : 受信データを生成多項式で除算し、その余りが0かどうかで誤りを検出する方法です。
               このような検査を行うため、送信側はあらかじめデータが生成多項式で割り切れるように余剰を付与したデータを伝送データとして送ります。
               ここで付与した余剰を<span style="font-weight:bold">CRC符号</span>と言います。
@@ -213,7 +214,7 @@
                 電気的特性(電気記号の電圧や信号の波形など)を規定します。
               </li>
             </ul>
-            <img alt="tyouho seigyo" width="500px" height="450px" src="/network/osi_sansyou.png">
+            <img alt="tyouho seigyo" width="500px" height="450px" src="osi_sansyou.png">
           </div>
         </li>
         <li class="media">
@@ -228,7 +229,7 @@
               アプリケーション層とプレゼンテーション層とセッション層に相当する<span style="font-weight:bold">アプリケーション層</span>の
               4階層から構成されます。
             </p>
-            <img alt="tyouho seigyo" width="500px" height="250px" src="/network/tcpip.png">
+            <img alt="tyouho seigyo" width="500px" height="250px" src="tcpip.png">
           </div>
         </li>
         <li class="media">
@@ -339,16 +340,16 @@
             <h3>ネットワーク接続用機器</h3>
             <ul>
               <li>リピータ : 物理層のレベルでデータを中継する機器です。信号の増幅、LANのの延長が行なえます。</li>
-              <img alt="tyouho seigyo" width="500px" height="100px" src="/network/repeata.png">
+              <img alt="tyouho seigyo" width="500px" height="100px" src="repeata.png">
               <li>ブリッジ : データリンク層のMACアドレスをもとに、フレーム(データ)を送出するかどうかを決めることができる機器です。</li>
-              <img alt="tyouho seigyo" width="500px" height="170px" src="/network/bridge.png">
+              <img alt="tyouho seigyo" width="500px" height="170px" src="bridge.png">
               <li>ルータ : ネットワーク層のアドレス(IPアドレスなど)をもとに経路選択して中継する機器。</li>
-              <img alt="tyouho seigyo" width="500px" height="290px" src="/network/routa.png">
+              <img alt="tyouho seigyo" width="500px" height="290px" src="routa.png">
               <li>
                 ゲートウェイ : トランスポート層以上で機能し、プロトコルの異なるネットワークを相互に接続します。
                 <span style="color:red">プロトコル変換機能</span>を持つ機器です。
               </li>
-              <img alt="tyouho seigyo" width="500px" height="270px" src="/network/gateway.png">
+              <img alt="tyouho seigyo" width="500px" height="270px" src="gateway.png">
             </ul>
           </div>
         </li>
@@ -357,9 +358,9 @@
             <h3 class="mt-0 mb-1">集線装置</h3>
             <ul>
               <li>リピータハブ : リピータと同等の機能です。</li>
-              <img alt="tyouho seigyo" width="500px" height="170px" src="/network/hub.png">
+              <img alt="tyouho seigyo" width="500px" height="170px" src="hub.png">
               <li>スイッチングハブ(L2スイッチ) : ブリッジと同等の機能です。</li>
-              <img alt="tyouho seigyo" width="500px" height="170px" src="/network/switching_hub.png">
+              <img alt="tyouho seigyo" width="500px" height="170px" src="switching_hub.png">
               <li>L3スイッチ(レイヤL3スイッチ) : ルータと同等の機能です。</li>
             </ul>
           </div>
@@ -465,7 +466,7 @@
                 ホスト部が全て1 : ネットワーク内の<span style="font-weight:bold">全てのホスト</span>(IPアドレスが割り振られた機器)を表すアドレスで、
                 <span style="color:red">ブロードキャストアドレス</span>と呼びます。
               </li>
-              <img alt="tyouho seigyo" width="500px" height="300px" src="/network/ip_address.png">
+              <img alt="tyouho seigyo" width="500px" height="300px" src="ip_address.png">
             </ul>
           </div>
         </li>
@@ -560,7 +561,7 @@
                 </br>TCPコネクションは、ヘッダ内にSYN(Synchronize)やACKという情報を含めた制御パケットをやり取りして確立します。
                 このようにして行うコネクションの確立を<span style="color:red">3ウェイハンドシェイク</span>と言います。
               </li>
-              <img alt="tyouho seigyo" width="500px" height="340px" src="/network/3way_handshake.png">
+              <img alt="tyouho seigyo" width="500px" height="340px" src="3way_handshake.png">
               <li>
                 UDP : コネクションを確立せず(コネクションレスという)、品質を保つための制御も一切行いません。
                 このため、<span style="font-weight:bold">信頼性よりも即時性や速度を重視</span>したプロトコルと言えます。
