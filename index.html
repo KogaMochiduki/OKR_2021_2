@@ -3,88 +3,668 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progate</title>
+  <title>OKR of KogaMochiduki</title>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header-left">
-        <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#">レッスン</a>
-        <a href="#">新規登録</a>
-        <a href="#" class="login">ログイン</a>
-      </div>
-    </div>
-  </header>
-  <div class="top-wrapper">
-    <div class="container">
-      <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
-      <p>Progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
-      <div class="btn-wrapper">
-        <a href="#" class="btn signup">新規登録はこちら</a>
-        <p>or</p>
-        <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-        <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a>
-      </div>
-    </div>
+  <div class="container">
+        <div class="center jumbotron">
+    <h1>ネットワーク基礎</h1>
+    <h2>令和3年度 受託設計グループOKR用資料</h2>
+    </br>
+    <h2>作成者：望月紘雅</h2>
+    <h2>作成日：2022年3月8日</h2>
   </div>
-  <div class="lesson-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>Learn Where to Get Started!</h2>
-      </div>
-      <div class="lessons">
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
+
+    <div class="report">
+      <ul class="list-unstyled">
+        <li class="media">
+          <div class="media-body">
+            <h3>目次</h3>
+            <div id="table-of-content"></div>
           </div>
-          <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
+        </li>
+         <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0">はじめに</h5>
+            <p>
+              筆者は受託設計グループの配属後の1年間、Webアプリやマイコンなど様々な業務に携わっておりましたが、どの業務おいても
+              ネットワーク・通信の知識は必要でありました。
+              本サイトはネットワークを理解することの重要性を実感した上で、ソフト分野における若手エンジニアの業務理解向上を行いたいという思いから、
+              <%= link_to "基本情報技術者試験",    "https://www.jitec.ipa.go.jp/1_11seido/fe.html" %>の出題範囲のうち、
+              <span style="font-weight:bold">ネットワーク</span>の単元中より重要な用語を抽出、まとめを行いました。
+              </br>本サイトがネットワーク学習の理解向上、または、復習となれば幸いです。
+            </p>
           </div>
-          <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>01</span>ネットワークの基礎</h2>
+            <h3>ネットワークとは</h3>
+            <p>データをやり取りするために、拠点間や機器間で通信回線を相互に接続したものです。
+            ネットワークには様々な種類があり、接続形態や通信回線(伝送媒体)などが異なります。</p>
           </div>
-          <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
+        </li>
+        <li class="media my-4">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">ネットワークの接続形態</h3>
+            <p>各装置をどのような形で接続するかの接続形態をトポロジと言います。主なトポロジは以下のようなものがあります。</p>
+            <ul>
+              <li>ポイントツーポイント(1:1の接続)</li>
+              <img alt="point_to_point" width="500px" height="120px" src="/network/point_to_point.png">
+              <li>スター型(中心の制御装置から放射状に接続、この制御装置の障害はネットワーク全体の障害)</li>
+              <img alt="star" width="500px" height="250px" src="/network/star.png">
+              <li>リング型(各装置をリング状に接続、一つの機器の障害はネットワーク全体の障害となる)</li>
+              <img alt="ring" width="500px" height="250px" src="/network/ring.png">
+              <li>バス型(一本の伝送路にぶら下がるように接続、機器の障害が他に与える影響が少ない)</li>
+              <img alt="basu" width="500px" height="160px" src="/network/basu.png">
+              <li>ツリー型(バス型、スター型の発展、伝送路が枝分かれする)</li>
+              <img alt="tree" width="500px" height="305px" src="/network/tree.png">
+              <li>メッシュ型(複数の機器同士を網状に相互接続する、広域ネットワークに多く見られる)</li>
+              <img alt="mesh" width="500px" height="200px" src="/network/mesh.png">
+            </ul>
           </div>
-          <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
-        </div>
-      </div>
-      <div class="clear"></div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">通信の回線</h3>
+            <p>通信回線には次の種類があります</p>
+            <ul>
+              <li>同軸ケーブル : ノイズ(雑音)に強く、伝送距離が比較的長いです。ケーブルが太く、折り曲げに弱いため、配線の自由度に欠けます。</li>
+              <li>ツイストペアケーブル : ノイズに弱く、伝送距離が短いです。構造が単純で配線の自由度が高いため、主にLANケーブルに使用されます。</li>
+              <li>光ファイバケーブル : ノイズに最も強く、長距離伝達や高速な通信に適しています。データを光で伝送し、曲げに弱く、加工が難しいです。</li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">LANとWAN</h3>
+            <p>敷地内や建物内などといった限られた範囲内のコンピュータや機器を接続したネットワークをLAN(Local Area Network)と言います。</p>
+            <p>これに対し、地理的に離れた場所のコンピュータや機器を結ぶネットワークをWAN(Wide Area Network)と言います。</p>
+            <ul>
+              <li>LAN(Local Area Network、コンピュータ同士を接続したネットワーク)</li>
+              <li>WAN(Wide Area Network、LAN同士を接続したネットワーク)</li>
+            </ul>
+            <img alt="LAN_WAN" width="500px" height="300px" src="/network/LAN_WAN.png">
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>02</span>伝送制御</h2>
+            <h3>伝送制御とは</h3>
+            <p>ネットワークを介して機器同士を接続しただけではうまく通信できなく、タイミングを合わせるなどの制御が必要になります。
+            このような制御のことを伝送制御といい、以下のようなものを制御します。</p>
+            <ul>
+              <li>回線制御(回線の制御や切断)</li>
+              <li>データリング制御(論理的な通信路の確立や解放)</li>
+              <li>同期制御(データ単位の確実な送受信)</li>
+              <li>誤り制御(データ内容の検証や訂正)</li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">同期制御</h3>
+            <p>データの開始と終了を判断し、双方の間で伝送のタイミングを合わせる制御です。同期制御の方式には次のようなものがあります。</p>
+            <ul>
+              <li>調歩制御 : 一文字単位で同期をとる方式で、<span style="color:red">非同期</span>方式とも呼ばれることもあります。
+              一文字の前後に<span style="color:red">スタートビット</span>と<span style="color:red">ストップビット</span>を付与して送信を行い、
+              スタートビットを検出した受信者は、それに続く一文字分のビット列を受信し、最後にストップビットを確認します。
+              </li>
+              <img alt="tyouho seigyo" width="500px" height="200px" src="/network/tyouho_seigyo.png">
+              <li>フレーム同期 : フラグシーケンスと呼ばれるパターン(0111110)で囲まれたフレームという単位でデータを伝送する方式です。
+                <p>フレーム(伝送データ) = フラグシーケンス(01111110) + (任意のビット列) + フラグシーケンス(01111110)</p>
+              </li>
+              <img alt="tyouho seigyo" width="500px" height="165px" src="/network/flame_seigyo.png">
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">誤り制御</h3>
+            <p>送信データは伝送中にノイズなどの影響を受け、誤った内容で受信されてしまうことがあります。
+            この誤りを検出し、最終的に正しいデータを受信できるようにするのが誤り制御の役割です。
+            誤り検出の方式には、次のようなものがあります。</p>
+            <ul>
+              <li>パリティ検査 : 送信側と受信側でデータ内の1の数を数え、それが奇数(または偶数)で一致しているかどうかで誤りを検出する方法です。
+              1ビット(奇数)の誤りは検出できますが、2ビット(偶数)の誤りは検出できません。</li>
+              <img alt="tyouho seigyo" width="500px" height="260px" src="/network/parity.png">
+              <li>垂直パリティ検査 : 複数文字のまとまりをブロックという単位として捉え、ブロック中の文字単位でパリティビットを付加する方法です。</li>
+              <li>水平パリティ検査 : 複数文字のまとまりをブロックという単位として捉え、ブロック中の文字の同じ位置のビットに対してパリティビットを付加する方法です。
+              誤り検出用の文字が付加されることになり、これを<span style="font-weight:bold">BCC</span>(Block Check Character)と言います。</li>
+              <img alt="tyouho seigyo" width="500px" height="240px" src="/network/suihei_parity.png">
+              <li>CRC(Cuclic Redundancy Check:巡回冗長検査) : 受信データを生成多項式で除算し、その余りが0かどうかで誤りを検出する方法です。
+              このような検査を行うため、送信側はあらかじめデータが生成多項式で割り切れるように余剰を付与したデータを伝送データとして送ります。
+              ここで付与した余剰を<span style="font-weight:bold">CRC符号</span>と言います。
+                <ul>
+                  <li>送信側 : 伝送データ = 元データ + CRC符号</li>
+                  <li>受信側 : 正常な伝送データ % 生成多項式 = 0</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">HDLC手順</h3>
+            各種制御方法についてどれを採用するかを定め、一つの伝送制御の仕組みとしてまとめあげたものを、伝送制御手順と言います。
+            <span style="color:red">HDLC手順</span>は伝送制御手順の代表的なもので、フレーム同期やCRCを採用しており、
+            効率の良い通信が可能なため、様々なところで採用されています。
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>03</span>ネットワークアーキテクチャ</h2>
+            <h3>OSI基本参照モデル</h3>
+            <p>通信を行うための様々な規約(約束事)を<span style="color:red">プロトコル</span>と言います。プロトコルはプロトコルが実現すべき機能を
+            いくつかの層(<span style="color:red">レイヤー</span>)に分割し、各層のプロトコルを組み合わせて使うことが一般的です。OSI基本参照モデルは
+            この機能を分割したモデルの代表例として、ISO(国際標準化機構)によって提唱された開放型システム間相互接続(OSI : Open Systems Interconnection)です。
+            </p>
+            <ul>
+              <li>
+                <p>アプリケーション層(第7層) : ユーザーが利用するアプリケーションに対して、ネットワークサービスを提供する層です。
+                  </br>
+                  主なプロトコルには、電子メール(<span style="color:red">SMTP</span>)、ファイル転送(<span style="color:red">FTP</span>)、
+                  Webページ閲覧(<span style="color:red">HTTP</span>)などがあります。
+                </p>
+              </li>
+              <li>
+                <p>
+                  プレゼンテーション層(第6層) : コンピュータ同士のデータ形式の違いを補正して、データを正しく表現するための層です。
+                  </br>
+                  <span style="font-weight:bold">文字コードの変換</span>や、<span style="font-weight:bold">暗号化</span>などが含まれます。
+                </p>
+              </li>
+              <li>
+                <p>セッション層(第5層) : アプリケーション間で情報をやり取りする上で、必要となる状態や方法の同期を取るための層です。
+                  </br>
+                  エラー発生時の手戻りを少なくするため、やり取りの途中に</span>や<span style="font-weight:bold">同期</span>点(チェックポイント)を設ける事もあります。
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span style="color:red">トランスポート層</span>(第4層) : データ伝送の信頼性を提供するための層です。
+                  正しく確実に届けられる通信を提供するために、エラー検出機能や回復機能などが規定されています。
+                  </br>
+                  主なプロトコルには、<span style="color:red">TCP</span>、<span style="color:red">UDP</span>などがあります。
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span style="color:red">ネットワーク層</span>(第3層) : 通信装置やコンピュータ、端末といった機器を<span style="color:red">ノード</span>と言い、
+                  ネットワーク層は最終的な送信元ノードから宛先ノードまでの<span style="font-weight:bold">エンドノード間</span>
+                  (エンドツーエンド、エンドシステム間とも言う)でのデータ伝送を実現するための層です。
+                  </br>
+                  このために<span style="color:red">ルーティング(経路選択)</span>や<span style="font-weight:bold">中継</span>を用い、
+                  最適な経路を選択しながらデータを送り届けます。
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span style="color:red">データリンク層</span>(第2層) : 一つの通信回線で接続された<span style="font-weight:bold">隣接ノード間</span>
+                  (データリンク)における確実なデータ伝送を実現するための層です。
+                  </br>
+                  このためには同期制御や誤り制御などが必要であり、LANやHDLC手順などの伝送制御手順が該当します。
+                </p>
+              </li>
+              <li>
+                物理層(第1層) : <span style="font-weight:bold">ノード</span>をネットワークに接続するための物理的特性(コネクタの形状、ピンの数、ピンの役割など)、
+                電気的特性(電気記号の電圧や信号の波形など)を規定します。
+              </li>
+            </ul>
+            <img alt="tyouho seigyo" width="500px" height="450px" src="/network/osi_sansyou.png">
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">TCP/IP</h3>
+            <p>
+              OSI基本参照モデルは、機能を分割したモデル(例)に過ぎず、実際のプロトコルを規定したものではありません。
+              </br>
+              実際のプロトコルとしてはインターネットなどで用いられる<span style="color:red">TCP/IP</span>が代表的です。
+              TCP/IPは<span style="font-weight:bold">ネットワーク層</span>、<span style="font-weight:bold">トランスポート層</span>、
+              物理層とデータリンク層に相当する<span style="font-weight:bold">ネットワークインタフェース層</span>、
+              アプリケーション層とプレゼンテーション層とセッション層に相当する<span style="font-weight:bold">アプリケーション層</span>の
+              4階層から構成されます。
+            </p>
+            <img alt="tyouho seigyo" width="500px" height="250px" src="/network/tcpip.png">
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">ヘッダ</h3>
+            <p>
+              プロトコルが規定された機能を実現するためには制御情報が必要です。例えば、データリンク層では隣接ノードがどれなのか、
+              ネットワーク層では宛先ノードがどれなのかという情報が必要です。
+              この制御情報は、各プロトコルがデータに<span style="color:red">ヘッダ</span>として付加します。
+              これをカプセル化と言います。上位層でカプセル化されたデータは下位層では上位層が付加したヘッダの内容は考慮せずに
+              「ひとまとまりのデータ」と見なして、自身に必要な制御情報を付加します。つまり、ネットワークを流れるデータには、
+              各層のプロトコルが付加した複数のヘッダが含まれます。
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>04</span>LAN</h2>
+            <h3>有線LAN(イーサネット)</h3>
+            <p>
+              通信媒体にケーブルを用いたLANの代表的な規格が<span style="color:red">イーサネット</span>です。
+              バスやハブに接続された格ノードが、通信要求の発生に応じてデータを送信する方式で、LAN標準化団体である
+              <span style="color:red">IEEE</span>によって<span style="color:red">IEEE802.3</span>シリーズとして標準化されています。
+              イーサネットの格規格名は「速度 + BASE + 距離(ケーブル種類)」の表記されます。
+            </p>
+            <ul>
+              (例)
+              <li>10BASE2 : 同軸ケーブルを用いた最大ケーブル長200mで100Mビット/秒</li>
+              <li>10BASE5 : 同軸ケーブルを用いた最大ケーブル長500mで100Mビット/秒</li>
+              <li>100BASE-TX : ツイストペアケーブルを用いた100Mビット/秒のLAN</li>
+              <li>100BASE-FX : 光ファイバケーブルを用いた100Mビット/秒のLAN</li>
+            </ul>
+          </div>
+        </li>
+         <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">無線LAN</h3>
+            <p>
+              通信媒体にケーブルではなく電波を用いたものが<span style="color:red">無線LAN</span>です。
+              無線LANは、IEEEによって<span style="color:red">IEEE802.11</span>シリーズとして規格化されています。
+              無線LANで複数のノードを接続する集線装置の役割を持つ機器を<span style="color:red">アクセスポイント</span>と言い、
+              有線LANと無線LANを相互に接続する役割も担います。
+              アクセスポイントの識別を行うために、<span style="color:red">SSID(ESSID)</span>という文字列を用いています。
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">MACアドレス</h3>
+            <p>
+              ノードの識別に用いられる情報をアドレスといい、LANで用いられるアドレスを<span style="color:red">MACアドレス</span>と言います。
+              <span style="color:red">フレーム</span>(LANで送受信するデータ)の
+              <span style="font-weight:bold">ヘッダには送信元と宛先のMACアドレスが設定</span>されているため、
+              フレームのヘッダを見れば、「どのノードから、どのノードに送ったフレームか」が判断できるようになっています。
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>05</span>LANのアクセス制御</h2>
+            <h3>アクセス制御</h3>
+            <p>
+              複数のノードが同時にフレームを送信した場合、伝送路上でフレームの<span style="color:red">衝突(コリジョン)</span>が発生してしまい、
+              正常に通信ができなくなります。そこで、この衝突が発生しないような、または、衝突が発生しても回復できるような制御が必要になります。
+              このような確実にノード間の伝送を行うための制御を<span style="color:red">媒体アクセス制御</span>(MAC : Media Access Control)と言います。
+              主な媒体アクセス制御は以下のようなものがあります。
+            </p>
+            <ul>
+              <li>CSMA/CD : イーサネットで用いるアクセス制御</li>
+              <li>CSMA/CA : 無線LANで用いるアクセス制御</li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">CSMA/CD</h3>
+            <p><span style="color:red">CSMA/CD</span>(Carrier Sense Multiple Access with Collision Detection)の要点は次の三つです。</p>
+            <ul>
+              <li>
+                伝送路が空いていれば、自由にフレームを送出できる点
+                <p>-> 空いていなければしばらく送出を見合わせ、改めて伝送路の状態を調べます。</p>
+              </li>
+              <li>
+                衝突を検出した場合は、直ちにフレーム送出を取り止める点
+                <p>-> しばらく時間を置いてから再送出を試みます。</p>
+              </li>
+              <li>
+                回線利用率が高くなると、応答時間が悪化する点
+                <p>-> 伝送路の利用率が高くなれば、コリジョンの発生回数が多くなり、再送したフレームもコリジョンを起こすという悪循環に陥ってしまいます。</p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">CSMA/CA</h3>
+            <p>
+              <span style="color:red">CSMA/CA</span>(Carrier Sense Multiple Access with Collision Avoidance)はCSMA/CDと似ていますが、
+              無線ではコリジョンが検出できないため、代わりに、時間をかけて回線状態を調べてから送信を行うことでコリジョンを回避します。
+              ただし、これらの方策を採っても、コリジョンを完全に回避できません。このため、CSMA/CAでは一定時間応答が無ければ衝突が
+              発生したとみなして、フレームを再送する仕組みが規定されています。
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>06</span>LAN間接続装置</h2>
+            <h3>ネットワーク接続用機器</h3>
+            <ul>
+              <li>リピータ : 物理層のレベルでデータを中継する機器です。信号の増幅、LANのの延長が行なえます。</li>
+              <img alt="tyouho seigyo" width="500px" height="100px" src="/network/repeata.png">
+              <li>ブリッジ : データリンク層のMACアドレスをもとに、フレーム(データ)を送出するかどうかを決めることができる機器です。</li>
+              <img alt="tyouho seigyo" width="500px" height="170px" src="/network/bridge.png">
+              <li>ルータ : ネットワーク層のアドレス(IPアドレスなど)をもとに経路選択して中継する機器。</li>
+              <img alt="tyouho seigyo" width="500px" height="290px" src="/network/routa.png">
+              <li>
+                ゲートウェイ : トランスポート層以上で機能し、プロトコルの異なるネットワークを相互に接続します。
+                <span style="color:red">プロトコル変換機能</span>を持つ機器です。
+              </li>
+              <img alt="tyouho seigyo" width="500px" height="270px" src="/network/gateway.png">
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">集線装置</h3>
+            <ul>
+              <li>リピータハブ : リピータと同等の機能です。</li>
+              <img alt="tyouho seigyo" width="500px" height="170px" src="/network/hub.png">
+              <li>スイッチングハブ(L2スイッチ) : ブリッジと同等の機能です。</li>
+              <img alt="tyouho seigyo" width="500px" height="170px" src="/network/switching_hub.png">
+              <li>L3スイッチ(レイヤL3スイッチ) : ルータと同等の機能です。</li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>07</span>WAN</h2>
+            <h3>ネットワーク接続用機器</h3>
+            <p>
+              WANには、データを送る相手を選べる交換接続と、相手が固定されている専用線があります。
+              WANの通信方式の種類と特徴を以下に示します。
+            </p>
+            <ul>
+              <li>
+                回線交換 : 相手を選択して物理的に回線を接続します。電話網のように通信が終了するまでは2者間で回線が占有され、
+                専用線と同じような状態になります。
+              </li>
+              <li>
+                蓄積交換 : データをパケットなどの単位に分割し、転送を繰り返して伝送を行います。
+                複数の機器が回線を共有できますが、網の混雑状況によっては大きな遅延が発生します。
+              </li>
+              <li>専用線 : 2者間を専用の回線で接続します。相手先の選択は不可です。</li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">通信サービス</h3>
+            <p>現在利用されている通信サービスには、以下のようなものがあります。</p>
+            <ul>
+              <li>
+                ブロードバンド通信 : 主にインターネットへの接続に使われる常時接続の通信サービスで、
+                代表的なものに<span style="color:red">FTTH</span>があります。FTTHは収容局から加入者の宅内まで
+                <span style="font-weight:bold">光ファイバ</span>を引き込み、高速なデータ伝送を行うサービスです。
+              </li>
+              <li>
+                モバイル通信 : 最近では無線通信の高速伝送技術である<span style="color:red">LTE</span>に対応したスマートフォンが増えています。
+                携帯端末をルータや無線LANアクセスのように用いて、PCゲーム機をインターネットに接続する<span style="color:red">デザリング</span>
+                機能なども広く利用されています。
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>08</span>インターネットとTCP/IP</h2>
+            <h3>インターネット</h3>
+            <p>
+              企業や学校などのネットワーク(LAN)を<span style="color:red">ISP</span>(Internet Services Provider)を介して相互に接続した
+              世界規模の巨大なネットワークです。ISPはインターネットに接続するためのサービスを提供する事業者であり、単にプロバイダとも言います。
+              インターネットに接続するためには、ISPと契約する必要があります。インターネットでは、通信に<span style="color:red">TCP/IP</span>を用い、
+              ホームページ(WWW)や電子メール、ファイル転送など、様々なサービスを利用できます。
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">IP電話</h3>
+            <p>
+              LANやインターネット等のTCP/IPネットワーク上で音声通話を実現するサービスです。
+              IP電話で用いる技術には、次のようなものがあります。
+            </p>
+            <ul>
+              <li><span style="color:red">VoIP</span>(Voice over IP) : 音声をIPパケットにカプセル化するために用いられる技術です。</li>
+              <li>
+                <span style="color:red">SIP</span>(Session Initiation Protocol) : 
+                呼制御(従来の電話と同様に相手先を呼び出して通話を開始したり、通話を終了したりするための制御)を行うためのプロトコルです。
+              </li>
+              <li>
+                <span style="color:red">VoIPゲートウェイ</span> : 従来の電話網とTCP/IP網を相互接続するために、
+                音声とTCP/IPデータを相互変換する機器です。
+              </li>
+              <li>
+                <span style="color:red">RTP</span>(Realtime Transport Protocol) : 音声データや映像データ等を受診すると
+                同時に再生するストリーミング再生を行うためのプロトコルです。
+              </li>
+              <li>
+                <span style="color:red">QoS</span>(Quality of Service) : ネットワークの混雑による音声の途切れや遅れが生じるのを避けるために、
+                IP電話のデータを優先するように制御する品質制御のことを指します。
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>09</span>IPアドレス</h2>
+            <p>
+              エンドノード間でのデータのやり取りを行うために、ネットワーク層のアドレスである<span style="color:red">IPアドレス</span>を用います。
+              IPアドレスの体系は次のようになっています。
+            </p>
+            <ul>
+              <li><span style="font-weight:bold">32ビットのアドレス</span>32ビットのアドレス体系 : 8ビットずつ区切って10進数で表記をします。</li>
+              <li>
+                <span style="color:red">ネットワーク部</span>と<span style="color:red">ホスト部</span>に分かれる : 
+                ホスト部は組織内で自由に割り振ることができますが、
+                <span style="font-weight:bold">ホスト部のビットが全て1のアドレスと、全て0のアドレスは予約されている為、使用することができません。</span>
+              </li>
+              <li>
+                ホスト部が全て0 : 組織の<span style="font-weight:bold">ネットワークそのもの</span>を表すアドレスで、
+                <span style="color:red">ネットワークアドレス</span>と呼びます。
+              </li>
+              <li>
+                ホスト部が全て1 : ネットワーク内の<span style="font-weight:bold">全てのホスト</span>(IPアドレスが割り振られた機器)を表すアドレスで、
+                <span style="color:red">ブロードキャストアドレス</span>と呼びます。
+              </li>
+              <img alt="tyouho seigyo" width="500px" height="300px" src="/network/ip_address.png">
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>10</span>IPアドレスの管理</h2>
+            <h3>サブネット分割</h3>
+            <p>
+              <span style="color:red">サブネットマスク</span>はネットワーク部に"1"、ホスト部に"0"を設定した値で、
+              IPアドレスと同じように8ビットごとに10進数で表記します。
+              </br>(例) 上位26ビットをネットワーク部にする場合
+              </br>11111111 11111111 11111111 11000000 -> 255.255.255.192
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">DHCP</h3>
+            <p>
+              <span style="color:red">DHCP</span>(Dynamic Host Configuration Protocol)は、
+              <span style="font-weight:bold">IPアドレスを動的に割り当てる</span>ためのプロトコルです。
+              DHCPを用いる場合、ホスト(DHCPクライアント)は、起動時あるいは必要時にDHCPサーバに対してIPアドレスを要求します。
+              この要求に対してDHCPサーバは、あらかじめ登録されているIPアドレスのうちの1つを割り当てます。なお、クライアントの
+              利用が終了したら、DHCPサーバはその<span style="font-weight:bold">アドレスを回収</span>します。
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">プライベートIPアドレスとグローバルIPアドレス</h3>
+            <p>
+              組織の内部ネットワーク(LAN)内だけで、自由に利用できるIPアドレスを<span style="color:red">プライベートIPアドレス</span>と言います。
+              これに対し、インターネット上で利用できる正式なIPアドレスを<span style="color:red">グローバルIPアドレス</span>と呼んで区別します。
+              プライベートアドレスを割り当てられた端末は、インターネット上のホストとは直接接続できないため、NATやIPマスカレード(NAPT)という
+              IPアドレス変換機能を用います。NAPTはNATの発展で、ポート番号(後述)を組み合わせた変換を行います。
+              <ul>
+                <li>NAT : プライベートIPアドレス対グローバルIPアドレス = 1対1</li>
+                <li>IPマスカレード(NAPT) : プライベートIPアドレス対グローバルIPアドレス = 多対1</li>
+              </ul>
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">IPv6</h3>
+            <p>
+              現在一般に用いられている32ビットのIPアドレスはIPv4(バージョン4)という仕様に基づいており、インターネットの普及に伴って、
+              徐々に割り当て可能なアドレスが無くなっていく(枯渇する)傾向にあります。この問題を解決するものとして
+              <span style="color:red">IPv6</span>と呼ばれる次世代バージョンのIPが策定されています。
+              IPv6には、
+              <ul>
+                <li><span style="font-weight:bold">128ビット</span>の広大なアドレス空間</li>
+                <li>暗号化などのセキュリティ機能の装備</li>
+                <li>プラグ&プレイ(装置を繋ぐだけで、自動的に各種設定が行われる)</li>
+              </ul>
+              など、IPv4の弱点を補う特徴を備えています。IPv6アドレスは次のように128ビットを16ビットごとに":"(コロン)で区切った8つの16進数で表記します。
+              4桁の16進数のうち、先頭の0は省略が可能であり、"0000"は"0"に省略します。
+              </br>fe80 : 0 : 0 : 0 : 253b : 77a : f6a0 : 6931
+            </p>
+            <p>
+              なお、アドレス中の1ヶ所に限り、連続する"0"を::と省略できるため、
+              </br>fe80 :: 253b : 77a : f6a0 : 6931
+              </br>と記述することもできます。一部のプロバイダはIPv6に移行しているところもあり、IPv6に対応したソフトウェアも増えてきています。
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>11</span>TCPとUDP</h2>
+            <h3>ポート番号</h3>
+            <p>
+              IPアドレスによって、目的のホスト(コンピュータ)に届けられたデータがアプリケーションを識別するために用いる番号を
+              <span style="color:red">ポート番号</span>と言います。IPアドレスと同様に宛先ポート番号と送信元ポート番号が
+              TCPやUDPのヘッダの中に設定されます。
+            </p>
+            <p>
+              クライアントのポート番号は、通信要求によって動的に与えられます。一方、サーバ側のポート番号は「よく使われるポート番号」である
+              <span style="color:red">ウェルノンポート番号</span>を静的に設定します。
+              </br>(例) HTTP = 80, SMTP = 25 
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">TCPとUDP</h3>
+            <p>TCP/IPにおけるトランスポート層のプロトコルには<span style="color:red">TCP</span>と<span style="color:red">UDP</span>があります</p>
+            <ul>
+              <li>
+                TCP : 送信元と宛先の間で論理的な通信路である<span style="font-weight:bold">コネクションを確立</span>して通信を行い、
+                通信の完了とともに解放します。コネクションが確立されている間、確認応答やフロー制御、順序(シーケンス)制御といった
+                <span style="font-weight:bold">品質を保つための制御</span>が行われます。
+                </br>TCPコネクションは、ヘッダ内にSYN(Synchronize)やACKという情報を含めた制御パケットをやり取りして確立します。
+                このようにして行うコネクションの確立を<span style="color:red">3ウェイハンドシェイク</span>と言います。
+              </li>
+              <img alt="tyouho seigyo" width="500px" height="340px" src="/network/3way_handshake.png">
+              <li>
+                UDP : コネクションを確立せず(コネクションレスという)、品質を保つための制御も一切行いません。
+                このため、<span style="font-weight:bold">信頼性よりも即時性や速度を重視</span>したプロトコルと言えます。
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>12</span>アプリケーションプロトコル</h2>
+            <p>主なアプリケーションプロトコルは以下のようなものがあります。</p>
+            <ul>
+              <li>
+                HTTP(Hyper Text Transfer Protocol) :ホームページの閲覧(アクセス)を行うプロトコルです。
+                ブラウザが<span style="color:red">URL</span>に指定されたHTMLや画像などの要求に対して、WEBサーバが応答として返す仕組みです。
+                URLはインターネット上でのデータの置き場所を示す表記です。
+              </li>
+              <li>
+                DNS(Domain Name System) : サーバなどでは通常、IPアドレスを"https://www.google.co.jp/"のような名前(<span style="color:red">ドメイン名</span>)
+                を付けて管理します。DNSは<span style="color:red">DNSサーバ</span>でこのIPアドレスとドメイン名の変換を行う仕組みです。
+              </li>
+              <li>
+                SMTP(Simple Mail Transfer Protocol) : 電子メールの送信やメールサーバ間の転送に用いられます。
+              </li>
+              <li>
+                POP(Post Office Protocol) : 電子メールの受信を行うプロトコルです。
+                自分宛に届いた全てのメールを受信してダウンロードする為、メールをクライアント側で管理することを前提としたプロトコルです。
+              </li>
+              <li>
+                IMAP(Internet Message Access Protocol) : 電子メールの受信を行うプロトコルです。
+                POPに対して、メールをサーバ上に残しておき、受信したいメールだけを選択して受診するなどの機能を持ちます。
+              </li>
+              <li>
+                FTP(File Transfer Protocol) : インターネット上で<span style="color:red">ファイル転送</span>を行うプロトコルです。
+                実際にファイルを転送するためのファイル転送用コネクションと、転送するファイルの指定やファイル転送の開始を指示するための
+                制御用コネクションを組み合わせて利用します。
+              </li>
+              <li>
+                TELNET : ネットワークで接続するされたホストにログインすることにより、CUIでの遠隔操作を行うためのプロトコルです。
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h2 class="mt-0 mb-1"><span>13</span>ネットワーク管理</h2>
+            <h3>SNTP</h3>
+            <p>
+              <span style="color:red">SNMP</span>(Simple Network Management Protocol)は、ネットワークに接続した
+              <span style="font-weight:bold">各種機器の状態を監視、管理する</span>ためのプロトコルです。
+              SNMPでは、管理する側を<span style="font-weight:bold">マネージャ</span>、監視・管理される各機器を
+              <span style="font-weight:bold">エージェント</span>として、<span style="color:red">MIB</span>(Management Information Base)という
+              各エージェントの状態に関する情報をやり取りすることで監視・管理を実現します。
+            </p>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-body">
+            <h3 class="mt-0 mb-1">ICMP</h3>
+            <p>
+              <span style="color:red">ICMP</span>(Internet Control Message Protocol)は、TCP/IPネットワーク上でIPアドレスをもつホストが
+              相互にメッセージをやりとりするためのプロトコルで、エラー通知機能を持っています。
+              このためネットワーク層において、各ホストのIPアドレスが適切に設定されているか、指定したIPアドレスの相手にパケットが到達できるかどうかを
+              監視することができます。
+            </p>
+          </div>
+        </li>
+      </ul>
     </div>
+
+
+    <script type="text/javascript">
+     $(function(){
+      var tableContentsList = $(".report").find('h2, h3');
+      var contents = '';
+      tableContentsList.each(function(index){
+        let className = '';
+        tableContentsText = $(this).text();
+        switch($(this).prop("tagName").toLowerCase()){
+          case "h2":
+            className = 'contents2';
+            break;
+          case "h3":
+            className = 'contents3';
+            break;
+        }
+        // インデックスとテキストの間にスペースを挿入
+        if (className == 'contents2'){
+          tableContentsText = tableContentsText.substring(0, 2) + " " + tableContentsText.substring(2);
+        }
+        contents += `<li><a class="${className}" href="#head${index}">${tableContentsText}</a></li>`;
+        $(this).attr("id", `head${index}`);
+      });
+      document.querySelector('#table-of-content').innerHTML += `${contents}`;
+
+      $('a[href^="#head"]').click(function() {
+        var href= $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var position = target.offset().top-10;
+        $('body,html').animate({scrollTop:position}, 0, 'swing');
+        return false;
+       });
+    });
+    </script>
   </div>
-  <div class="message-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
-        <h3>Let's learn to code, learn to be creative!</h3>
-      </div>
-      <span class="btn message">さっそく開発する</span>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-      <p>Learn to Code, Learn to be Creative.</p>
-    </div>
-  </footer>
 </body>
 </html>
