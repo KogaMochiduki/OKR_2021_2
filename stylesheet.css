@@ -83,29 +83,27 @@ textarea {
 }
 
 // 目次のレイアウト
-#table-of-content{
-  li {
-    list-style: none;
-  }
-  a {
-      text-decoration: none;
-  }
-  .contents1 {
-      margin-left: 0px;
-  }
-  .contents2 {
-      margin-left: 15px;
-  }
-  .contents3 {
-      margin-left: 30px;
-  }
-  .contents4 {
-      margin-left: 45px;
-  }
-  .contents5 {
-      margin-left: 60px;
-  }
-  .contents6 {
-      margin-left: 75px;
-  }
+#table-of-content li {
+  list-style: none;
+}
+#table-of-content a {
+    text-decoration: none;
+}
+#table-of-content .contents1 {
+    margin-left: 0px;
+}
+#table-of-content .contents2 {
+    margin-left: 15px;
+}
+#table-of-content .contents3 {
+    margin-left: 30px;
+}
+#table-of-content .contents4 {
+    margin-left: 45px;
+}
+#table-of-content .contents5 {
+    margin-left: 60px;
+}
+#table-of-content .contents6 {
+    margin-left: 75px;
 }
