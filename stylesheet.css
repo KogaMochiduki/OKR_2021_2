@@ -68,18 +68,15 @@ textarea {
   background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
 }
 
+.media-body ul,.media-body ol {
+  border-top: solid #1e366a 1px;/*上のボーダー*/
+  border-bottom: solid #1e366a 1px;/*下のボーダー*/
+  padding: 0.5em 0 0.5em 1.5em;
+}
 
-.media-body {
-  ul, ol {
-    border-top: solid #1e366a 1px;/*上のボーダー*/
-    border-bottom: solid #1e366a 1px;/*下のボーダー*/
-    padding: 0.5em 0 0.5em 1.5em;
-  }
-  
-  ul li, ol li {
-    line-height: 1.5;
-    padding: 0.5em 0;
-  }
+.media-body ul li,.media-body ol li {
+  line-height: 1.5;
+  padding: 0.5em 0;
 }
 
 // 目次のレイアウト
