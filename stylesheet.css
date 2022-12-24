@@ -1,0 +1,112 @@
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.report {
+  h2 {
+    position: relative;
+    padding: 1rem .5rem 1rem 4em;
+  }
+  
+  h2:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    content: '';
+    border-radius: 3px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#209cff), to(#68e0cf));
+    background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
+    background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+  }
+  
+  h2 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 2rem;
+    color: #fff;
+    background: #209cff;
+  }
+  
+  h2 span:after {
+    position: absolute;
+    top: calc(50% - 7px);
+    right: -11px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-width: 7px 0 7px 12px;
+    border-style: solid;
+    border-color: transparent transparent transparent #209cff;
+  }
+  
+  h3 {
+    padding: 1rem 2rem;
+    color: #fff;
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#209cff), to(#68e0cf));
+    background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
+    background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+  }
+}
+
+.media-body {
+  ul, ol {
+    border-top: solid #1e366a 1px;/*上のボーダー*/
+    border-bottom: solid #1e366a 1px;/*下のボーダー*/
+    padding: 0.5em 0 0.5em 1.5em;
+  }
+  
+  ul li, ol li {
+    line-height: 1.5;
+    padding: 0.5em 0;
+  }
+}
+
+// 目次のレイアウト
+#table-of-content{
+  li {
+    list-style: none;
+  }
+  a {
+      text-decoration: none;
+  }
+  .contents1 {
+      margin-left: 0px;
+  }
+  .contents2 {
+      margin-left: 15px;
+  }
+  .contents3 {
+      margin-left: 30px;
+  }
+  .contents4 {
+      margin-left: 45px;
+  }
+  .contents5 {
+      margin-left: 60px;
+  }
+  .contents6 {
+      margin-left: 75px;
+  }
+}
